@@ -1,0 +1,24 @@
+<ion-view ng-controller='statusCtrl' view-title='Status'>
+<!-- //TODO set the chat view -->
+<style type="text/css">
+	  .myItem{
+	      padding:10px 10px;
+	  }
+	  .myItem button{
+	      margin:0px !important;
+	  }
+</style>
+<ion-content>
+	<div class="list">
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Your current status</span>
+			<input type="text" placeholder="{{status}}">
+		</label>
+		<item class='item myItem'>
+			<button class="button button-positive button-block">
+				Change Status
+			</button>
+		</item>
+	</div>
+</ion-content>
+</ion-view>

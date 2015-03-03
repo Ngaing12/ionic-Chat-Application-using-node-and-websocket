@@ -1,0 +1,20 @@
+<ion-view ng-controller='contactCtrl' view-title='Contacts'>
+<style type="text/css">
+  .myItem{
+      padding:10px 10px;
+  }
+  .myItem button{
+      margin:0px !important;
+  }
+</style>
+<!-- //TODO set the chat view -->
+<ion-content>
+  <ion-list>
+    <a class="item item-avatar"  href="#/app/contact/{{chat.id}}" ng-repeat="contact in contacts">
+      <img ng-src="{{contact.image}}" style="height:40px">
+      <h2>{{contact.name}}</h2>
+      <p>{{contact.status}}</p>
+    </a>
+  </ion-list>  
+</ion-content>
+</ion-view>

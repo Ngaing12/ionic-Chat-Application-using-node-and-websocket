@@ -1,0 +1,109 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+@mixin setBackgroundImp($color ,$imageURI, $repeat, $position, $size){
+	@if $color != null {
+    	background-color: $color !important;
+ 	} 
+ 	@if $imageURI != null {
+    	background-image: url($imageURI) !important;
+ 	} 
+ 	@if $repeat != null {
+ 		background-repeat: $repeat !important;
+ 	}
+ 	@if $position != null {
+ 		background-position:$position !important;
+ 	}
+ 	@if $size != null {
+ 		background-size:$size !important;
+ 	}
+ }
+
+.messageItem{
+	.messageContainer{
+		padding: 0.25em 1em !important;
+		background-color:green;
+	}
+	.bubbleIcon{
+		position: absolute;
+		height: 27px;
+		width: 1em;
+	}
+	.message{
+		padding-bottom: 0em;
+		padding: 0.5em 0.5em;
+		border: 1px solid #d3d4cc;
+		@include border-radius(10px);
+		font-size: 0.9em;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+	}
+	.time{
+		font-size: 0.7em;
+		text-align: right;
+	}
+	.received{
+	 	.message{
+			background:#ffffff;
+			.time{
+				color: #c2c2c2;
+			}
+		}
+		.bubbleIcon{		
+			@include setBackgroundImp(null,"../img/talk-bubble-1.png",no-repeat,right top,13px auto);		
+			left: 2px;
+			bottom: 14px;
+		}
+	}
+	.sent {
+		.message{
+			background:#faf4fe;
+			.time{
+				color: #a9a4ab;
+			}
+			.time.success span{
+				@include setBackgroundImp(null,"../img/1tick.png",no-repeat,left center,18px auto);		
+				padding-left: 13px;
+			}
+			.time.failure span{
+				// @include setBackgroundImp(null,"../img/cross.png",no-repeat,left center,9px auto);		
+				padding-left: 10px;
+
+			}
+			.time.loading span{
+				// @include setBackgroundImp(null,"../img/msgLoad.png",no-repeat,left center,9px auto);		
+				padding-left: 10px;
+
+			}
+			.time.doubleSuccess span{
+				// @include setBackgroundImp(null,"../img/1tick.png",no-repeat,left center,18px auto);		
+				padding-left: 13px;
+			}
+		}
+		.bubbleIcon{
+			// @include setBackgroundImp(null,"../img/talk-bubble-2.png",no-repeat,left top,13px auto);		
+			right: 1px;
+			bottom: 2px;
+		}
+	}
+}

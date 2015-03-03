@@ -1,0 +1,15 @@
+<ion-view ng-controller='chatCtrl' view-title='Chat'>
+<ion-content>
+    <ion-list>
+	    <div class="messageItem" ng-repeat="chat in chats">
+	    	<div class="messageContainer" ng-class="{received:!chat.sent,sent:chat.sent}"> 
+				<div class="bubbleIcon"></div> 
+				<div class="message">{{chat.message}}
+					<br>
+					<span class="time success">{{chat.time | date : 'dd MMM y'}}</span>
+				</div>
+			</div>  
+	    </div>
+  	</ion-list>  
+</ion-content>
+</ion-view>

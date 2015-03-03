@@ -1,0 +1,20 @@
+<ion-view ng-controller='recentChatCtrl' view-title='Recent Chat'>
+<style type="text/css">
+  .myItem{
+      padding:10px 10px;
+  }
+  .myItem button{
+      margin:0px !important;
+  }
+</style>
+<!-- //TODO set the chat view -->
+<ion-content>
+  <ion-list>
+    <a class="item item-avatar" href="#/app/recentChat/{{chat.id}}" ng-repeat="chat in recentChats">
+      <img ng-src="{{chat.image}}" style="height:40px">
+      <h2>{{chat.name}}</h2>
+      <p>{{chat.lastMsg}}</p>
+    </a>
+  </ion-list>  
+</ion-content>
+</ion-view>
